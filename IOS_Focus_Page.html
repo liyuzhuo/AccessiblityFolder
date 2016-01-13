@@ -1,0 +1,475 @@
+<html lang="en">
+   <head>
+      <title>IOS Focus Sample</title>
+      <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript">
+         $("document").ready(function(){
+           
+           $(".js-ajax-php-json").submit(function(){
+             var data = "";
+             $("#myDymanicContent").empty();
+             $("#questionLoading").css("display","visible");
+             $.ajax({
+               type: "get",
+               dataType: "text",
+               url: "blank.html", //Relative or absolute path to response.php file
+               data: data,
+               success: function(data) {
+                 $("#questionLoading").css("display","none");
+                 $("div#nextPage").css("display","visible");
+                 setTimeout(function(){
+                     $("div#nextPage").attr("tabindex","-1").focus();
+                 },1000);
+               },
+               error: function (jqXHR, status, err) {
+                 setTimeout(function(){
+                      $("div#nextPage").attr("tabindex","-1").focus();
+                 },1000);
+               },
+               complete: function (jqXHR, status) {
+                    setTimeout(function(){
+                      $("div#nextPage").attr("tabindex","-1").focus();
+                 },1000);
+               }
+             });
+             return false;
+           });
+         });
+      </script>
+      <style>
+         .loadingBar {
+         background: url(../images/spinner.gif) -6px -3px;
+         height: 13px;
+         width: 208px;
+         }
+      </style>
+   </head>
+   <body>
+      <div id="dvLoading"></div>
+      <!--Put the following in the <body>-->
+      <form  class="js-ajax-php-json" method="get" accept-charset="utf-8" role="main">
+         <div id="myDymanicContent" role="document" aria-label="Heading Text" tabindex="-1" style="visibility: visible; margin-left: 0px;">
+            <div id="questionLoading" role="status" style="display: none;">
+               <div class="headline" style="visibility: visible;">
+                  Please wait while your question(s) are loading.
+               </div>
+               <div class="loadingBar"></div>
+            </div>
+            <div class="sectionHeader" style="visibility: visible;">
+               <p class="sectionText" style="visibility: visible;"></p>
+            </div>
+            <h1 id="headingText" style="visibility: visible;">Section 1</h1>
+            <div class="main_panel_area branded_main_panel_area" style="visibility: visible;">
+               <div class="row question first" role="radiogroup" aria-labelledby="question1" style="visibility: visible;">
+                  <p class="cell questionText" data-itemid="4b8c0d80a88243d5856e8daccf367656" id="question1" style="visibility: visible;">
+                     11. It bothers me when people ask me to help them get their work done.
+                  </p>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_973bc3a4-914e-4103-bb0f-37d8d2530edc" value="3f2bc7f4c618415aafc90c3ac45563e8" aria-label="Strongly Disagree" id="likert_item_0_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <label class="button " for="likert_item_0_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_973bc3a4-914e-4103-bb0f-37d8d2530edc" value="2872b203c8de409d8384acf2906a5893" aria-label="Slightly Disagree" id="likert_item_1_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <label class="button " for="likert_item_1_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_973bc3a4-914e-4103-bb0f-37d8d2530edc" value="eb643203135d4b49ba232204fb84a4ee" aria-label="Not sure/in between" id="likert_item_2_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <label class="button " for="likert_item_2_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_973bc3a4-914e-4103-bb0f-37d8d2530edc" value="3c709840513c4513ae97f3c8f6efded8" aria-label="Slightly Agree" id="likert_item_3_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <label class="button " for="likert_item_3_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_973bc3a4-914e-4103-bb0f-37d8d2530edc" value="26efe5ea792d43f78399b15ca351887a" aria-label="Strongly Agree" id="likert_item_4_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <label class="button " for="likert_item_4_973bc3a4-914e-4103-bb0f-37d8d2530edc" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+                     </label>
+                  </div>
+               </div>
+               <div class="row question" role="radiogroup" aria-labelledby="question2" style="visibility: visible;">
+                  <p class="cell questionText" data-itemid="ebd0261cfe8a4b5f857c59c84a57e29c" id="question2" style="visibility: visible;">
+                     12. I don't always double-check my work.
+                  </p>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_401efbf7-d750-408a-95d0-e96f806e1e80" value="f236913d8a9742fcb478f59a3bb5ec0b" aria-label="Strongly Disagree" id="likert_item_0_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <label class="button " for="likert_item_0_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_401efbf7-d750-408a-95d0-e96f806e1e80" value="60b5a8cc3d2f4626840d6f4a2a2e37de" aria-label="Slightly Disagree" id="likert_item_1_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <label class="button " for="likert_item_1_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_401efbf7-d750-408a-95d0-e96f806e1e80" value="4c33c7ad046b4fdc81e9320da987c644" aria-label="Not sure/in between" id="likert_item_2_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <label class="button " for="likert_item_2_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_401efbf7-d750-408a-95d0-e96f806e1e80" value="728c010c5fa742ca957dfd92d2fc9659" aria-label="Slightly Agree" id="likert_item_3_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <label class="button " for="likert_item_3_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_401efbf7-d750-408a-95d0-e96f806e1e80" value="2e1a5289180b4b819c7e5628cf3664e6" aria-label="Strongly Agree" id="likert_item_4_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <label class="button " for="likert_item_4_401efbf7-d750-408a-95d0-e96f806e1e80" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+                     </label>
+                  </div>
+               </div>
+               <div class="row question" role="radiogroup" aria-labelledby="question3" style="visibility: visible;">
+                  <p class="cell questionText" data-itemid="c4c793d9bcac41e0a0920502f75760ec" id="question3" style="visibility: visible;">
+                     13. I take initiative at work.
+                  </p>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_af63b528-09c2-43cc-a018-96b7907d8082" value="e16a0678f2e249a4b3158ce2dc88b280" aria-label="Strongly Disagree" id="likert_item_0_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <label class="button " for="likert_item_0_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_af63b528-09c2-43cc-a018-96b7907d8082" value="17c6358746cb4741a455479387d5b07d" aria-label="Slightly Disagree" id="likert_item_1_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <label class="button " for="likert_item_1_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_af63b528-09c2-43cc-a018-96b7907d8082" value="c0684394433445d98ef34aab7e2e4800" aria-label="Not sure/in between" id="likert_item_2_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <label class="button " for="likert_item_2_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_af63b528-09c2-43cc-a018-96b7907d8082" value="aae571ce5f794d048504728f3735ec79" aria-label="Slightly Agree" id="likert_item_3_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <label class="button " for="likert_item_3_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_af63b528-09c2-43cc-a018-96b7907d8082" value="f8410f3c70654542bc78ed4a96f87b50" aria-label="Strongly Agree" id="likert_item_4_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <label class="button " for="likert_item_4_af63b528-09c2-43cc-a018-96b7907d8082" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+                     </label>
+                  </div>
+               </div>
+               <div class="row question" role="radiogroup" aria-labelledby="question4" style="visibility: visible;">
+                  <p class="cell questionText" data-itemid="25d3c143378042ad9912d846362754fa" id="question4" style="visibility: visible;">
+                     14. Heavy workloads do not cause me stress.
+                  </p>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_f2e3d447-999a-4669-bf2d-4aec9d683685" value="5eb96a35036144a79ed3f446b685f3e6" aria-label="Strongly Disagree" id="likert_item_0_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <label class="button " for="likert_item_0_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_f2e3d447-999a-4669-bf2d-4aec9d683685" value="da77e026959948b492e2e59db81d036f" aria-label="Slightly Disagree" id="likert_item_1_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <label class="button " for="likert_item_1_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_f2e3d447-999a-4669-bf2d-4aec9d683685" value="16a2cb5e21114f4a8a53e2fcd086ba67" aria-label="Not sure/in between" id="likert_item_2_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <label class="button " for="likert_item_2_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_f2e3d447-999a-4669-bf2d-4aec9d683685" value="955adb2f1a63420590bd99dd78d48d69" aria-label="Slightly Agree" id="likert_item_3_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <label class="button " for="likert_item_3_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+                     </label>
+                  </div>
+                  <div class="cell answer" style="visibility: visible;">
+                     <input type="radio" itemtype="5" name="likert_item_f2e3d447-999a-4669-bf2d-4aec9d683685" value="863b23ad0fcd4c2187f98cc14df29f18" aria-label="Strongly Agree" id="likert_item_4_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <label class="button " for="likert_item_4_f2e3d447-999a-4669-bf2d-4aec9d683685" style="visibility: visible;">
+                     <span class="HCradio" role="presentation"></span>
+                     <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+                     </label>
+                  </div>
+               </div>
+               <input type="submit" name="submit" value="Submit form"  />
+               <div class="feedback" style="visibility: visible;"></div>
+            </div>
+         </div>
+         <div id="nextPage" style="display:none;">
+         <div class="row question" role="radiogroup" aria-labelledby="question5" style="visibility: visible;">
+            <p class="cell questionText" data-itemid="218f7ded12ec4adc856bac9008c54c14" id="question5" style="visibility: visible;">
+               15. It is important to me to abide by the laws set by the federal and state government.
+            </p>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" value="7e0c5f063edd47a2a411f156a52ae3a4" aria-label="Strongly Disagree" id="likert_item_0_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <label class="button " for="likert_item_0_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" value="e64297dc2cd244d2a13df8a54e3e3f51" aria-label="Slightly Disagree" id="likert_item_1_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <label class="button " for="likert_item_1_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" value="7da1a80cf1b848849cfcc313bcf8f65c" aria-label="Not sure/in between" id="likert_item_2_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <label class="button " for="likert_item_2_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" value="cc8f2acb384747b9ba9a26f6161ce683" aria-label="Slightly Agree" id="likert_item_3_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <label class="button " for="likert_item_3_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" value="4365a0f9f32e4d6888c47a2fd539e7d2" aria-label="Strongly Agree" id="likert_item_4_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <label class="button " for="likert_item_4_cc618e9e-a2f3-49d0-98eb-386c9782e5d1" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+               </label>
+            </div>
+         </div>
+         <div class="row question" role="radiogroup" aria-labelledby="question6" style="visibility: visible;">
+            <p class="cell questionText" data-itemid="37518d58bae044b7999518d90ab89fb5" id="question6" style="visibility: visible;">
+               16. I usually won't go out of my way to help someone else.
+            </p>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_39573ece-93f2-4b2b-9536-07c41d9624f8" value="c02c06f113ca47d79c408c7fbe3bb70a" aria-label="Strongly Disagree" id="likert_item_0_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <label class="button " for="likert_item_0_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_39573ece-93f2-4b2b-9536-07c41d9624f8" value="8469b0ed368040db80e6e3318a89730f" aria-label="Slightly Disagree" id="likert_item_1_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <label class="button " for="likert_item_1_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_39573ece-93f2-4b2b-9536-07c41d9624f8" value="4deb18cb67b9407793143702a1faef6c" aria-label="Not sure/in between" id="likert_item_2_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <label class="button " for="likert_item_2_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_39573ece-93f2-4b2b-9536-07c41d9624f8" value="18fb3532bdf6417da7dc003b0f8a2694" aria-label="Slightly Agree" id="likert_item_3_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <label class="button " for="likert_item_3_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_39573ece-93f2-4b2b-9536-07c41d9624f8" value="6f5e2aed500741cab9f37cc86a9c3d6f" aria-label="Strongly Agree" id="likert_item_4_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <label class="button " for="likert_item_4_39573ece-93f2-4b2b-9536-07c41d9624f8" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+               </label>
+            </div>
+         </div>
+         <div class="row question" role="radiogroup" aria-labelledby="question7" style="visibility: visible;">
+            <p class="cell questionText" data-itemid="4f2cb87863f945aab9ca921ad44a8d07" id="question7" style="visibility: visible;">
+               17. I don't waste time trying to get things perfect.
+            </p>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_091ddd79-f685-48f0-953c-b085a83cda41" value="2d1adfb857f1457fb734b02e877cb841" aria-label="Strongly Disagree" id="likert_item_0_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <label class="button " for="likert_item_0_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_091ddd79-f685-48f0-953c-b085a83cda41" value="de34ab2c0376459d81c9fd5bbec6e938" aria-label="Slightly Disagree" id="likert_item_1_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <label class="button " for="likert_item_1_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_091ddd79-f685-48f0-953c-b085a83cda41" value="de46ed38713f4568b9a7d8dfbbf492bb" aria-label="Not sure/in between" id="likert_item_2_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <label class="button " for="likert_item_2_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_091ddd79-f685-48f0-953c-b085a83cda41" value="91e1d57d4a2b4f0caf62a25a901c0368" aria-label="Slightly Agree" id="likert_item_3_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <label class="button " for="likert_item_3_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_091ddd79-f685-48f0-953c-b085a83cda41" value="1443e8320c7d4dbf884f782818abc0be" aria-label="Strongly Agree" id="likert_item_4_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <label class="button " for="likert_item_4_091ddd79-f685-48f0-953c-b085a83cda41" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+               </label>
+            </div>
+         </div>
+         <div class="row question" role="radiogroup" aria-labelledby="question8" style="visibility: visible;">
+            <p class="cell questionText" data-itemid="68860efe761944d28de57903c85a72f5" id="question8" style="visibility: visible;">
+               18. If something needs to be done, I get it done without having to be told.
+            </p>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" value="8ff045cd0244424298fd65d1f30ac49c" aria-label="Strongly Disagree" id="likert_item_0_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <label class="button " for="likert_item_0_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" value="2de4532292504b059da614a25acac248" aria-label="Slightly Disagree" id="likert_item_1_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <label class="button " for="likert_item_1_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" value="eaea4dc757b04cff919277d9a58b88b3" aria-label="Not sure/in between" id="likert_item_2_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <label class="button " for="likert_item_2_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" value="b9af4f6737b44f82b7093c0f74a89b77" aria-label="Slightly Agree" id="likert_item_3_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <label class="button " for="likert_item_3_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" value="d562b2745e9947a4a492b2ed64d75093" aria-label="Strongly Agree" id="likert_item_4_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <label class="button " for="likert_item_4_d7ffb9c6-880c-46cd-a4dc-8444ff1c0820" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+               </label>
+            </div>
+         </div>
+         <div class="row question" role="radiogroup" aria-labelledby="question9" style="visibility: visible;">
+            <p class="cell questionText" data-itemid="29e9ca3bbdb74d5f9d91feee0b05c9a1" id="question9" style="visibility: visible;">
+               19. Unexpected problems at work cause me great frustration.
+            </p>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_86da512d-0716-4ff1-89d5-962aa13b808c" value="6b98062f40934b2eaf405fb4dde06b55" aria-label="Strongly Disagree" id="likert_item_0_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <label class="button " for="likert_item_0_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_86da512d-0716-4ff1-89d5-962aa13b808c" value="b1f863b0042e4983ae5c9731709fa219" aria-label="Slightly Disagree" id="likert_item_1_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <label class="button " for="likert_item_1_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_86da512d-0716-4ff1-89d5-962aa13b808c" value="ad3a15fea6c04e5f9920434a72121eee" aria-label="Not sure/in between" id="likert_item_2_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <label class="button " for="likert_item_2_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_86da512d-0716-4ff1-89d5-962aa13b808c" value="65d3cde1a08340caaa6700d0cf63225c" aria-label="Slightly Agree" id="likert_item_3_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <label class="button " for="likert_item_3_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+               </label>
+            </div>
+            <div class="cell answer" style="visibility: visible;">
+               <input type="radio" itemtype="5" name="likert_item_86da512d-0716-4ff1-89d5-962aa13b808c" value="d87ccfbb03b640ed94bd2f7ed1606072" aria-label="Strongly Agree" id="likert_item_4_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <label class="button " for="likert_item_4_86da512d-0716-4ff1-89d5-962aa13b808c" style="visibility: visible;">
+               <span class="HCradio" role="presentation"></span>
+               <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+               </label>
+            </div>
+         </div>
+         <div>
+            <div class="row question" role="radiogroup" aria-labelledby="question10" style="visibility: visible;">
+               <p class="cell questionText" data-itemid="e033393966994a5d9ca8b1a4f0e12e92" id="question10" style="visibility: visible;">
+                  20. Compliance with company policies is part of being a good employee.
+               </p>
+               <div class="cell answer" style="visibility: visible;">
+                  <input type="radio" itemtype="5" name="likert_item_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" value="9b368e43e6d04fed980822fb8947d926" aria-label="Strongly Disagree" id="likert_item_0_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <label class="button " for="likert_item_0_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <span class="HCradio" role="presentation"></span>
+                  <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Disagree</span>
+                  </label>
+               </div>
+               <div class="cell answer" style="visibility: visible;">
+                  <input type="radio" itemtype="5" name="likert_item_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" value="dea18f9b1b564ecf8b38c4f1b71a553c" aria-label="Slightly Disagree" id="likert_item_1_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <label class="button " for="likert_item_1_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <span class="HCradio" role="presentation"></span>
+                  <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Disagree</span>
+                  </label>
+               </div>
+               <div class="cell answer" style="visibility: visible;">
+                  <input type="radio" itemtype="5" name="likert_item_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" value="9d447055cd1f43bcb2b3b02f77be2fd0" aria-label="Not sure/in between" id="likert_item_2_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <label class="button " for="likert_item_2_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <span class="HCradio" role="presentation"></span>
+                  <span class="text" aria-hidden="true" style="visibility: visible;">Not sure/in between</span>
+                  </label>
+               </div>
+               <div class="cell answer" style="visibility: visible;">
+                  <input type="radio" itemtype="5" name="likert_item_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" value="98f15268c93d4326840aa98e57bf57b0" aria-label="Slightly Agree" id="likert_item_3_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <label class="button " for="likert_item_3_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <span class="HCradio" role="presentation"></span>
+                  <span class="text" aria-hidden="true" style="visibility: visible;">Slightly Agree</span>
+                  </label>
+               </div>
+               <div class="cell answer" style="visibility: visible;">
+                  <input type="radio" itemtype="5" name="likert_item_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" value="3c40028e06ed4496a8ae099e1f39866c" aria-label="Strongly Agree" id="likert_item_4_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <label class="button " for="likert_item_4_9ad1e35d-2f59-4689-9cda-b32e1c2360ec" style="visibility: visible;">
+                  <span class="HCradio" role="presentation"></span>
+                  <span class="text" aria-hidden="true" style="visibility: visible;">Strongly Agree</span>
+                  </label>
+               </div>
+            </div>
+         </div>
+         <input id="nextPageSubmit" type="submit" name="submit" value="Next"  />
+         </div>
+         <div class="the-return"></div>
+      </form>
+   </body>
+</html>
